@@ -12,7 +12,7 @@
                 <div class="carousel-caption">
                     <h3>PHP With Laravel Framework</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, vero?</p>
-                    <a href="" class="btn btn-dark px-5">Read more</a>
+                    <a href="{{route('training.detail')}}" class="btn btn-dark px-5">Read more</a>
                 </div>
             </div>
             <div class="carousel-item ">
@@ -62,7 +62,7 @@
                             <p class="mb-0">TK. 25000</p>
                             <p >Starting Date: 10-01-2023</p>
                             <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
+                            <a href="{{route('training.detail')}}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <p class="mb-0">TK. 25000</p>
                             <p >Starting Date: 10-01-2023</p>
                             <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
+                            <a href="{{route('training.detail')}}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                             <p class="mb-0">TK. 25000</p>
                             <p >Starting Date: 10-01-2023</p>
                             <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
+                            <a href="{{route('training.detail')}}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
             <div class="row bg-danger">
                 <div class="col ">
                     <div class="rounded-0 card card-body text-center border-0">
-                        <h3 class="">Popular Courses</h3>
+                        <h3 class="{{route('training.detail')}}">Popular Courses</h3>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                             <p class="mb-0">TK. 25000</p>
                             <p >Starting Date: 10-01-2023</p>
                             <hr/>
-                            <a href="" class="btn btn-success">Read More</a>
+                            <a href="{{route('training.detail')}}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
