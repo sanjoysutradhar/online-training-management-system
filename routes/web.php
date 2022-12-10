@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
@@ -26,6 +27,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::post('/create-update/{id}', [TeacherController::class,'update'])->name('teacher.update');
     Route::get('/create-delete/{id}', [TeacherController::class,'delete'])->name('teacher.delete');
     Route::get('/teacher-manage', [TeacherController::class,'manage'])->name('teacher-manage');
+
+
+    //category
+    Route::get('/category/add',[CategoryController::class,'index'])->name('category.add');
+    Route::post('/category/create',[CategoryController::class,'create'])->name('category.create');
+    Route::get('/category/manage',[CategoryController::class,'manage'])->name('category.manage');
+    Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+    Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+    Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
 });
 

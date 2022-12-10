@@ -52,7 +52,7 @@ class Teacher extends Model
     }
     public static function deleteTeacher($id){
         self::$teacher=Teacher::find($id);
-        if(self::$teacher->image){
+        if(file_exists(self::$teacher->image)){
             unlink(self::$teacher->image);
         }
         self::$teacher->delete();
