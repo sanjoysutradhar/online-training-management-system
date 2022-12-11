@@ -105,7 +105,11 @@ class Course extends Model
         }
         self::$course->delete();
     }
-
+    public static function hitCount($id){
+        self::$course=Course::find($id);
+        self::$course->hit_count=self::$course->hit_count+1;
+        self::$course->save();
+    }
     public function category(){
         return $this->belongsTo(Category::class);
     }

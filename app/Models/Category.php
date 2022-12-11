@@ -34,6 +34,7 @@ class Category extends Model
     public static function saveBasicInfo($category,$request,$getImage){
         $category->name=$request->name;
         $category->description=$request->description;
+        $category->status=$request->status;
         $category->image=$getImage;
         $category->save();
     }

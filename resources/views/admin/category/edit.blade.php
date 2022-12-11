@@ -17,7 +17,16 @@
                         </div>
 
                     </div>
-
+                    <div class="form-group row mb-4">
+                        <label for="horizontal-description-input" class="col-sm-3 col-form-label">Status</label>
+                        <div class="col-sm-9">
+                            <input type="radio" name="status" class="mr-2" value="1" {{$category->status==1 ?'checked':''}}><label for="" class="mr-3">Published</label>
+                            <input type="radio" name="status" class="mr-2" value="0" {{$category->status==0 ?'checked':''}}><label for="" class="mr-3">Unpublished</label>
+                            @error('status')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="form-group row mb-4">
                         <label for="horizontal-image-input" class="col-sm-3 col-form-label">Image</label>
                         <div class="col-sm-9">

@@ -32,3 +32,6 @@ body{
     padding-left: 40px;
     padding-right: 40px;
 }
+.my-caption{
+    background-color: rgba(44, 205, 186, 0.5);
+}
