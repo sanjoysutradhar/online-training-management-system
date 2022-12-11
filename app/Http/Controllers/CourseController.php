@@ -21,7 +21,7 @@ class CourseController extends Controller
             'description'=>'required|string',
             'starting_date'=>'required',
             'fee'=>'required',
-            'image' => 'required|image|mimes:jpeg,jpg,png',
+            'image' => 'required|image|mimes:jpeg,webp,jpg,png',
         ]);
         Course::createCourse($request);
         return redirect('/course/add')->with('message','Course saved successfully');

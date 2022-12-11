@@ -7,12 +7,13 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminCourseController;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
 Route::get('/training-category', [HomeController::class,'categoryTraining'])->name('training.category');
 Route::get('/all-training', [HomeController::class,'allTraining'])->name('training.all');
-Route::get('/training-detail', [HomeController::class,'trainingDetail'])->name('training.detail');
+Route::get('/training-detail/{id}', [HomeController::class,'trainingDetail'])->name('training.detail');
 Route::get('/contact-us', [HomeController::class,'contact'])->name('contact');
 
 
@@ -36,6 +37,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
     Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
     Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+    //Admin manage course
+    Route::get('/manage-course',[AdminCourseController::class,'index'])->name('admin.manage-course');
+    Route::get('/course-detail/{id}',[AdminCourseController::class,'detail'])->name('admin.course-detail');
+    Route::get('/update-course-status/{id}',[AdminCourseController::class,'updateStatus'])->name('admin.update-course-status');
+    Route::get('/update-course-offer-status/{id}',[AdminCourseController::class,'updateOfferStatus'])->name('admin.update-course-offer-status');
+    Route::get('/delete-course/{id}',[AdminCourseController::class,'delete'])->name('admin.course-delete');
+
+    Route::post('admin/update-course-offer/{id}',[AdminCourseController::class,'updateCourseOffer'])->name('admin.update-course-offer');
+
 
 });
 

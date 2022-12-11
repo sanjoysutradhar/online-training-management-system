@@ -36,7 +36,7 @@ class CategoryController extends Controller
 //            'name'=>'required|unique:categories,name'.$category->id,
 //            'name'=>'required','unique:categories,name'.$category->id,
 //            "file('image')"=>'nullable|mimes:png,jpg,jpeg',
-            'image' => 'nullable|image|mimes:jpeg,jpg,png,gif',
+            'image' => 'nullable|image|mimes:jpeg,webp,jpg,png,gif',
             'description'=>'nullable',
         ]);
 //        $name = Validator::make($request->all(), [
