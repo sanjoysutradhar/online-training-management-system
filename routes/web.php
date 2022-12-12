@@ -9,6 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\EnrollController;
+use App\Http\Controllers\Student\StudentAuthController;
 
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
@@ -16,13 +17,21 @@ Route::get('/training-category/{id}', [HomeController::class,'categoryTraining']
 Route::get('/all-training', [HomeController::class,'allTraining'])->name('training.all');
 Route::get('/training-detail/{id}', [HomeController::class,'trainingDetail'])->name('training.detail');
 
+//course enrollment
 Route::get('/training-enroll/{id}', [EnrollController::class,'index'])->name('training.enroll');
 Route::post('/training/new-enroll/{id}', [EnrollController::class,'newEnroll'])->name('training.new-enroll');
+Route::get('/training-complete-enroll/{id}', [EnrollController::class,'enrollComplete'])->name('training.complete');
+
+//student
+Route::get('/login-registration', [HomeController::class,'loginRegistration'])->name('login-registration');
+
+Route::get('/student-dashboard', [StudentAuthController::class,'dashboard'])->name('student.dashboard');
+Route::get('/student-logout', [StudentAuthController::class,'logout'])->name('student.logout');
+Route::post('/student-login', [StudentAuthController::class,'login'])->name('student.login');
 
 Route::get('/contact-us', [HomeController::class,'contact'])->name('contact');
 
 
-Route::get('/login-registration', [HomeController::class,'loginRegistration'])->name('login-registration');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

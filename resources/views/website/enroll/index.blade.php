@@ -16,7 +16,7 @@
                                 <div class="row mb-3">
                                     <label for="" class="col-md-3">Full Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control mb-3" name="name" value="{{old('name')}}">
+                                        <input type="text" class="form-control mb-3" name="name" @if(Session::get('student_id')) value="{{$student->name}}"@else value="{{old('name')}}"  @endif >
 
                                         <span class="text-danger">{{$errors->has('name')? $errors->first('name'):''}}</span>
                                     </div>
@@ -24,7 +24,7 @@
                                 <div class="row mb-3">
                                     <label for="" class="col-md-3">Email Address</label>
                                     <div class="col-md-9">
-                                        <input type="email" class="form-control mb-3" name="email" value="{{old('email')}}">
+                                        <input type="email" class="form-control mb-3" name="email" @if(Session::get('student_id')) value="{{$student->email}}"@else value="{{old('email')}}"  @endif>
 
                                         <span class="text-danger">{{$errors->has('email')? $errors->first('email'):''}}</span>
                                     </div>
@@ -32,7 +32,7 @@
                                 <div class="row mb-3">
                                     <label for="" class="col-md-3">Mobile Number</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control mb-3" name="mobile" value="{{old('mobile')}}">
+                                        <input type="number" class="form-control mb-3" name="mobile" @if(Session::get('student_id')) value="{{$student->mobile}}"@else value="{{old('mobile')}}"  @endif>
 
                                         <span class="text-danger">{{$errors->has('mobile')? $errors->first('mobile'):''}}</span>
                                     </div>
